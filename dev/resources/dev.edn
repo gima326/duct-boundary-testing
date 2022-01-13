@@ -1,0 +1,27 @@
+{
+  ;; OK
+  :duct.database/sql
+  {:connection-uri "jdbc:mysql://localhost:3306/dev?user=root&password=password"}
+
+  ;; NG
+  ;; :duct.module/sql
+  ;; {:database-url "jdbc:mysql://localhost:3306/dev?user=root&password=password"}
+  ;; {:connection-uri "jdbc:mysql://localhost:3306/dev?user=root&password=password"}
+
+  ;; migrations
+  :duct.migrator/ragtime
+  {:database   #ig/ref :duct.database/sql
+   :migrations [#ig/ref :duct-boundary-testing.migration/create-users-dev]}
+
+  [:duct.migrator.ragtime/resources :duct-boundary-testing.migration/create-users-dev]
+  {:path "migrations/dev"}
+
+
+  ;; NO NEED TO WRITE THESE LINES
+
+  ;; :duct.router/cascading
+  ;; [#ig/ref :duct-boundary-testing.handler/routing]
+
+  ;; :duct-boundary-testing.handler/routing
+  ;; {:db #ig/ref :duct.database/sql}
+  }

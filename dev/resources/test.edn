@@ -1,0 +1,29 @@
+{
+  ;; OK
+  :duct.database/sql
+  {:connection-uri "jdbc:mysql://localhost:3306/test?user=root&password=password"}
+
+  ;; NG
+  ;; :duct.module/sql
+  ;; {:database-url "jdbc:mysql://localhost:3306/test?user=root&password=password"}
+  ;; {:connection-uri "jdbc:mysql://localhost:3306/test?user=root&password=password"}
+
+  ;; migrations
+  :duct.migrator/ragtime
+  {:database   #ig/ref :duct.database/sql
+   :migrations [#ig/ref :duct-boundary-testing.migration/create-users-test]}
+
+  [:duct.migrator.ragtime/sql :duct-boundary-testing.migration/create-users-test]
+   {:up [ "CREATE TABLE users ( id SERIAL PRIMARY KEY, name text, age int, email text );"
+          "INSERT INTO users (name, age, email) values ('test_user', 20, 'test_user@yahoo.co.jp');"]
+    :down ["DROP TABLE users;"]}
+
+
+  ;; NO NEED TO WRITE THESE LINES
+
+  ;; :duct.router/cascading
+  ;; [#ig/ref :duct-boundary-testing.handler/routing]
+
+  ;; :duct-boundary-testing.handler/routing
+  ;; {:db #ig/ref :duct.database/sql}
+  }

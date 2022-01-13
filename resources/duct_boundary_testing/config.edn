@@ -1,0 +1,29 @@
+{:duct.profile/base
+ {:duct.core/project-ns duct-boundary-testing
+
+  ;; add
+  :duct.router/cascading
+  [#ig/ref :duct-boundary-testing.handler/routing]
+
+  :duct-boundary-testing.handler/routing
+  {:db #ig/ref :duct.database/sql}
+
+  }
+
+ :duct.profile/dev   #duct/include "dev"
+ :duct.profile/local #duct/include "local"
+ ;; add2
+ :duct.profile/test  #duct/include "test"
+
+ :duct.profile/prod {}
+
+ :duct.module/logging {}
+
+ ;; add
+ :duct.module/web {}
+
+ ;; [ moved to dev.edn, test.edn ]
+
+ ;; :duct.module/sql {}
+ ;; {:database-url "jdbc:mysql://localhost:3306/pred?user=root&password=password"}
+}

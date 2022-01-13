@@ -3,8 +3,8 @@
 Webフレームワーク「Duct」入門サンプルコード、単体テスト boundary 編。
 
 DB アクセス部分をテストしています。<br>
-:duct.migrator/ragtime によって、dev / test それぞれのスキーマの初期データを整備している。<br>
 dev / test ごとにスキーマを別にした（そのような要望があるのかは分からないけど）。<br>
+:duct.migrator/ragtime によって、dev / test それぞれのスキーマの初期データを整備している。<br>
 
 ネットで検索したところ、<br>
 :duct.migrator/ragtime を用いているサンプルは、<br>

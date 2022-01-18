@@ -124,6 +124,8 @@ Ran 1 tests containing 1 assertions.
 
 ### Migration
 
+#### up
+
 ```sh
 mysql> use test;
 Database changed
@@ -147,6 +149,8 @@ mysql> show tables;
 2 rows in set (0.00 sec)
 
 ```
+
+#### down
 
 ```sh
 $ lein rollback test

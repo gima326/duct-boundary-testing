@@ -121,6 +121,9 @@ Ran 1 tests containing 1 assertions.
 
 ```
 
+
+### Migration
+
 ```sh
 $ lein migrate test
 Java HotSpot(TM) 64-Bit Server VM warning: 

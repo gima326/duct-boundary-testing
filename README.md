@@ -86,6 +86,9 @@ But you can also run tests (with keywords) through Leiningen.
 
  (中略)
 
+ :aliases {"migrate"  ["run" "-m" "user/migrate"]
+           "rollback" ["run" "-m" "user/rollback"]}
+
  :profiles
   {:dev  [:project/dev :profiles/dev]
    :repl {:prep-tasks   ^:replace ["javac" "compile"]
@@ -158,6 +161,16 @@ mysql> show tables;
 #### - down -
 
 ```sh
+mysql> show tables;
++--------------------+
+| Tables_in_test     |
++--------------------+
+| ragtime_migrations |
+| users              |
++--------------------+
+2 rows in set (0.00 sec)
+
+
 $ lein rollback test
 Java HotSpot(TM) 64-Bit Server VM warning: 
 Options -Xverify:none and -noverify were deprecated in JDK 13 and will likely be removed in a future release.

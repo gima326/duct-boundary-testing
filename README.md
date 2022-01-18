@@ -134,13 +134,15 @@ mysql> use test;
 Database changed
 mysql> show tables;
 Empty set (0.00 sec)
+```
 
-
+```sh
 $ lein migrate test
 Java HotSpot(TM) 64-Bit Server VM warning: 
 Options -Xverify:none and -noverify were deprecated in JDK 13 and will likely be removed in a future release.
 Applying 01-create-users
 
+or
 
 user=> (migrate "test")
 Applying 01-create-users
@@ -169,13 +171,15 @@ mysql> show tables;
 | users              |
 +--------------------+
 2 rows in set (0.00 sec)
+```
 
-
+```sh
 $ lein rollback test
 Java HotSpot(TM) 64-Bit Server VM warning: 
 Options -Xverify:none and -noverify were deprecated in JDK 13 and will likely be removed in a future release.
 Rolling back 01-create-users
 
+or
 
 user=> (rollback "test")
 Rolling back 01-create-users

@@ -124,7 +124,7 @@ Ran 1 tests containing 1 assertions.
 
 ### Migration
 
-#### up
+#### - up -
 
 ```sh
 mysql> use test;
@@ -139,6 +139,12 @@ Options -Xverify:none and -noverify were deprecated in JDK 13 and will likely be
 Applying 01-create-users
 
 
+user=> (migrate "test")
+Applying 01-create-users
+nil
+```
+
+```sh
 mysql> show tables;
 +--------------------+
 | Tables_in_test     |
@@ -147,10 +153,9 @@ mysql> show tables;
 | users              |
 +--------------------+
 2 rows in set (0.00 sec)
-
 ```
 
-#### down
+#### - down -
 
 ```sh
 $ lein rollback test
@@ -159,6 +164,12 @@ Options -Xverify:none and -noverify were deprecated in JDK 13 and will likely be
 Rolling back 01-create-users
 
 
+user=> (rollback "test")
+Rolling back 01-create-users
+nil
+```
+
+```sh
 mysql> show tables;
 +--------------------+
 | Tables_in_test     |
@@ -166,7 +177,6 @@ mysql> show tables;
 | ragtime_migrations |
 +--------------------+
 1 row in set (0.00 sec)
-
 ```
 
 <!---

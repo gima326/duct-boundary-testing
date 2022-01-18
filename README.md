@@ -127,10 +127,33 @@ Java HotSpot(TM) 64-Bit Server VM warning:
 Options -Xverify:none and -noverify were deprecated in JDK 13 and will likely be removed in a future release.
 Applying 01-create-users
 
+
+mysql> show tables;
++--------------------+
+| Tables_in_test     |
++--------------------+
+| ragtime_migrations |
+| users              |
++--------------------+
+2 rows in set (0.00 sec)
+
+```
+
+```sh
+
 $ lein rollback test
 Java HotSpot(TM) 64-Bit Server VM warning: 
 Options -Xverify:none and -noverify were deprecated in JDK 13 and will likely be removed in a future release.
 Rolling back 01-create-users
+
+
+mysql> show tables;
++--------------------+
+| Tables_in_test     |
++--------------------+
+| ragtime_migrations |
++--------------------+
+1 row in set (0.00 sec)
 
 ```
 

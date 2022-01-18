@@ -121,6 +121,19 @@ Ran 1 tests containing 1 assertions.
 
 ```
 
+```sh
+$ lein migrate test
+Java HotSpot(TM) 64-Bit Server VM warning: 
+Options -Xverify:none and -noverify were deprecated in JDK 13 and will likely be removed in a future release.
+Applying 01-create-users
+
+$ lein rollback test
+Java HotSpot(TM) 64-Bit Server VM warning: 
+Options -Xverify:none and -noverify were deprecated in JDK 13 and will likely be removed in a future release.
+Rolling back 01-create-users
+
+```
+
 <!---
 
 ## Legal

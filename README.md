@@ -125,6 +125,12 @@ Ran 1 tests containing 1 assertions.
 ### Migration
 
 ```sh
+mysql> use test;
+Database changed
+mysql> show tables;
+Empty set (0.00 sec)
+
+
 $ lein migrate test
 Java HotSpot(TM) 64-Bit Server VM warning: 
 Options -Xverify:none and -noverify were deprecated in JDK 13 and will likely be removed in a future release.
@@ -143,7 +149,6 @@ mysql> show tables;
 ```
 
 ```sh
-
 $ lein rollback test
 Java HotSpot(TM) 64-Bit Server VM warning: 
 Options -Xverify:none and -noverify were deprecated in JDK 13 and will likely be removed in a future release.

@@ -163,6 +163,8 @@ mysql> show tables;
 #### - down -
 
 ```sh
+mysql> use test;
+Database changed
 mysql> show tables;
 +--------------------+
 | Tables_in_test     |
